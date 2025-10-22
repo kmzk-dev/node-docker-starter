@@ -1,0 +1,18 @@
+version: '3.0.0'
+
+services:
+  app:
+    image: node-22-install
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # ローカルディレクトリとコンテナの /app を同期
+    volumes:
+      - .:/app
+    # 対話モードを有効化
+    tty: true 
+    stdin_open: true
+    
+    # コンテナを起動したままにしておくためのコマンド
+    command: ["tail", "-f", "/dev/null"]

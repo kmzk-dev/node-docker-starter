@@ -1,0 +1,9 @@
+*
+
+!.gitignore
+!Dockerfile
+!docker-compose.yml
+!README.md
+!/asset/
+
+!npm vite command.png

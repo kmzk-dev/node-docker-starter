@@ -1,0 +1,20 @@
+version: '3.1.0'
+services:
+  app:
+    # 新しいDockerfileでイメージをビルド
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # ホストソースコードとコンテナのnode_modules分離
+    volumes:
+      - .:/app
+      - /app/node_modules 
+      
+    # ポートマッピング
+    ports:
+      - "5173:5173"
+      
+    # ホットリロードの安定化（特にWindows/Linux環境向け）
+    environment:
+      - CHOKIDAR_USEPOLLING=true
