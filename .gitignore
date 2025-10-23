@@ -5,5 +5,5 @@
 !docker-compose.yml
 !README.md
 !/asset/
-
+!.dockerignore
 !npm vite command.png
