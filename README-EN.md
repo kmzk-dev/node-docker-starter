@@ -46,7 +46,6 @@ docker exec -it [ID,or,NAMES] /bin/sh
 Project setup is now complete. Stop and remove the initial setup container and image.  
 If you do not perform the removal, please update the Dockerfile and docker-compose.yml according to the new project environment.
 ```bash
-docker compose stop
 docker compose down
 docker image rm node-22-install
 ```
