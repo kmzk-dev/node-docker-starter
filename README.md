@@ -51,7 +51,6 @@ docker exec -it [コンテナIDもしくはNAMES] /bin/sh
 プロジェクトの立ち上げに必要な作業はこれで完了です。初期設定用のコンテナとイメージを停止・破棄します。
 このままDockerfileとdockerc-compose.ymlを破棄をおこなわない場合、立ち上げたプロジェクト環境に応じて、書き換えをしてください。
 ```bash
-docker compose stop
 docker compose down
 docker image rm node-22-install
 ```
@@ -108,7 +107,7 @@ services:
 ##### package.jsonの修正
 ```json
   "scripts": {
-    "dev": "vite --host 0.0.0.0", // vite --host 0.0.0.0"にすることで、Dockerコンテナ外（ホストマシン）のブラウザからlocalhost:5173などでアクセス可能になります。を修正
+    "dev": "vite --host 0.0.0.0", // vite --host 0.0.0.0"にすることで、Dockerコンテナ外（ホストマシン）のブラウザからlocalhost:5173などでアクセス可能になります
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
